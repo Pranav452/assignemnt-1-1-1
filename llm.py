@@ -35,7 +35,7 @@ print("Vector store created successfully using Google's embeddings.")
 retriever = vectorstore.as_retriever()
 
 template = """
-You are an expert on advanced spacecraft.
+You are an expert on advanced codings.
 Answer the following question based ONLY on the provided context.
 If the answer is not in the context, say "I don't have that information".
 
