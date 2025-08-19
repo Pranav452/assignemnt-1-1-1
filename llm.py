@@ -20,7 +20,7 @@ if not os.getenv("GOOGLE_API_KEY"):
     raise ValueError("GOOGLE_API_KEY not found in .env file")
 
 
-loader = TextLoader("knowledge.txt")
+loader = TextLoader("knowledge.csv")
 documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 docs = text_splitter.split_documents(documents)
@@ -35,7 +35,9 @@ print("Vector store created successfully using Google's embeddings.")
 retriever = vectorstore.as_retriever()
 
 template = """
-You are an expert on advanced codings.
+You are an expert on AI Fitness Coach that combines workout planning, nutrition guidance, and progress tracking with RAG-based knowledge retrieval through a simple chat interface.
+
+.
 Answer the following question based ONLY on the provided context.
 If the answer is not in the context, say "I don't have that information".
 
